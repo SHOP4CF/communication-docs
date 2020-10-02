@@ -15,7 +15,7 @@ and __to keep updating them in the future__, if needed.
 ## Contributing
 
 To contribute, make changes to files under `docs/partners/<partner>/`.
-Any other suggestions are welcomed.
+You can also find your files starting from the index: [index.md](docs/index.md).
 
 Changes can be made either via GitHub web interface or via Git clients.
 
@@ -24,3 +24,8 @@ Format files with Markdown (see [GitHub docs](https://guides.github.com/features
 To push your changes:
 - open a pull request, or
 - contact Michal Zimniewicz (PSNC) via email to get permissions to push directly.
+
+If you modify file names or add new `*.md` files, 
+then please update [index.md](docs/index.md) accordingly.
+
+Any other suggestions are welcomed.
