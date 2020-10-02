@@ -41,7 +41,7 @@ SHOP4CF components by project partner:
     - [M2O2P](partners/TAU/M2O2P.md)
     - [VR-RM-MT](partners/TAU/VR-RM-MT.md)
 - TECNALIA
-    - [AR_Manual Editor](partners/TECNALIA/AR_Manual Editor.md)
+    - [AR_Manual_Editor](partners/TECNALIA/AR_Manual_Editor.md)
     - [AR_Teleassistance](partners/TECNALIA/AR_Teleassistance.md)
     - [VR_Creator](partners/TECNALIA/VR_Creator.md)
 - TUE

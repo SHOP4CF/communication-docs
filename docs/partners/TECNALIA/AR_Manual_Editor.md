@@ -1,6 +1,6 @@
 ## AR_Manual Editor
 
-Short name: AR_Manual Editor
+Short name: AR_Manual_Editor
 
 By TECNALIA
 
