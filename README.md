@@ -1,14 +1,26 @@
 # Communication among SHOP4CF components 
 
-Documentation of communication among SHOP4CF components 
+This is documentation of communication among SHOP4CF components.
 
-Published at https://shop4cf.github.io/communication-docs/
+As the first step, we document input/output of components.
+The purpose is to identify similarities and propose an uniform 
+[FIWARE data model](https://fiware-datamodels.readthedocs.io/en/latest/index.html)
+for communication among components 
+(and also for communication between the components and other systems in pilot locations).  
+
+Draft documentation files are already present in this repo for each component.
+Responsible project partners are expected to update them, 
+and __to keep updating them in the future__, if needed.  
 
 ## Contributing
 
-To contribute to the documentation, make changes to files under `docs/`.
+To contribute, make changes to files under `docs/partners/<partner>/`.
+Any other suggestions are welcomed.
+
+Changes can be made either via GitHub web interface or via Git clients.
+
 Format files with Markdown (see [GitHub docs](https://guides.github.com/features/mastering-markdown/)).
 
-Then, open a pull request to the master branch.
-
-Changes can be pushed either via GitHub web interface or via Git clients. 
+To push your changes:
+- open a pull request, or
+- contact Michal Zimniewicz (PSNC) via email to get permissions to push directly.
