@@ -4,55 +4,38 @@ Short name: AR_Teleassistance
 
 By TECNALIA
 
-_Text in italics are comments. Please remove them._
 
 ### Purpose
 
-_Describe the purpose of this component in 1-2 sentences. Please focus especially on what the component takes as its input, what added value it produces, and what is its output._
-
-This component takes ..., calculates ..., and returns ... 
+This component provides a communication channel between operators/workers and experts. It uses video streaming to share the same visual information and enables to exchange Augmented Reality indications to support maintenance and collaboration in working processes.
+ 
 
 ### Data interfaces
-
-_Describe what kind of input and output data is in use.
-Be detailed about the interpretation of your data. 
-Instead of writing 'input data from 20 sensors', please specify. 
-Add reference to some examples or attachments, if reasonable._
-
-_The provided information is to be the basis to identify opportunities for uniform data models across components._
-
-_The preliminary information is taken from the cross-WP questionnaires from spring 2020. Feel free to modify._
 
 Input and output data (but not user interfaces):
 
 
-1. INPUT: Client applications data
-    - Format: REST/Websocket ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+1. INPUT: Connection Client applications data
+    - Format:  JSON file for REST service (using HTTP protocol) / data frame for Websocket Protocol
+    - Real-time constraints: Internet connection
+    - Expected data volume: no more than 1Mb per message
 
-1. INPUT: Real-time stram from the device camera (smartphone, MS Hololens) and the touch coordinates in the screen (WebRTC)
-    - Format: JSON file ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+1. INPUT: Real-time stream (WebRTC) from the device camera (smartphone, MS Hololens) and the touch coordinates in the screen
+    - Format: WebRTC message formats using SDP protocol
+    - Real-time constraints: light and plain objects issues in context recognition, Internet connection
+    - Expected data volume: depending on the resolution of the call, from 19 Mb/s in the lower to 498 Mb/s in the highest
 
-1. OUTPUT: 3D objects
-    - Format: Video stream ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+1. OUTPUT: 3D and 2D objects in AR
+    - Format: fbx, and runtime mesh for procedural objects in scene; png for number sprites
+    - Real-time constraints: virtual memory used by the device
+    - Expected data volume: no more than 1Mb per object
 
-1. OUTPUT: Client applications data
-    - Format: REST/Websocket ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+1. OUTPUT: Connection Client applications data
+    - Format: JSON file for REST service (using HTTP protocol) / data frame for Websocket Protocol
+    - Real-time constraints: Internet connection 
+    - Expected data volume: no more than 1Mb per message
 
 
-The input data will be taken from Component X of Partner Y 
-and also from sensors available at Pilot Z. _Please update._
+The input data will be provided by the operator and the expert through the mobile devices.
 
-The output data will be pushed to Component X... 
-or to system Y available at Pilot Z. _Please update._
+The output data will be pushed to the mobile devices and used in the Pilot provided by Arcelik.

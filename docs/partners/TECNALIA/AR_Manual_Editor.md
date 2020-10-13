@@ -4,49 +4,34 @@ Short name: AR_Manual_Editor
 
 By TECNALIA
 
-_Text in italics are comments. Please remove them._
+
 
 ### Purpose
 
-_Describe the purpose of this component in 1-2 sentences. Please focus especially on what the component takes as its input, what added value it produces, and what is its output._
-
-This component takes ..., calculates ..., and returns ... 
+This component provides a Mixed Reality (MR) simulator for operator/worker asistance in customised product assembly process. Based on recognition of objects, it calculates a sequence of operations and returns a MR guidance to operators.
+ 
 
 ### Data interfaces
-
-_Describe what kind of input and output data is in use.
-Be detailed about the interpretation of your data. 
-Instead of writing 'input data from 20 sensors', please specify. 
-Add reference to some examples or attachments, if reasonable._
-
-_The provided information is to be the basis to identify opportunities for uniform data models across components._
-
-_The preliminary information is taken from the cross-WP questionnaires from spring 2020. Feel free to modify._
 
 Input and output data (but not user interfaces):
 
 
-1. INPUT: 3D objects, sequence of operations for the product assembly
-    - Format: JSON, XML, plain text, glb, jpg, png, mp4, pdf, etx ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+1. INPUT for EDITOR part: 3D objects, sequence of operations for the product assembly
+    - Format: JSON, Images (jpg, png), audios (wav, mp3), 3d objects (glb), videos (mp4, avi, flv, mov, mpg), documents (pdf)
+    - Real-time constraints: Not applicable
+    - Expected data volume: less than 1MB
 
-1. INPUT: 3D/contect/image/BIDI/recognition
-    - Format: Camera stream ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+1. INPUT for visualizator part: 3D/context/image/BIDI/recognition
+    - Format: JSON, Images (jpg, png), audios (wav, mp3), 3d objects (glb), videos (mp4, avi, flv, mov, mpg), documents (pdf)
+    - Real-time constraints: Light and patterns used for object recognition.
+    - Expected data volume: less than 1MB
 
-1. OUTPUT: Mixed Reality manual design tool for a specific product assembly process
-    - Format: JSON, XML, plain text, glb, jpg, png, mp4, pdf, etc ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+1. OUTPUT: Mixed Reality manual for a specific product assembly process
+    - Format: JSON, Images (jpg, png), audios (wav, mp3), 3d objects (glb), videos (mp4, avi, flv, mov, mpg), documents (pdf)
+    - Real-time constraints: Not applicable
+    - Expected data volume: less than 1MB
 
 
-The input data will be taken from Component X of Partner Y 
-and also from sensors available at Pilot Z. _Please update._
+The input data for EDITOR part will be provided by the user of the design tool. The input data for VISUALIZATOR part will be provided through object recognition using the camera in mobile or in the HUD.
 
-The output data will be pushed to Component X... 
-or to system Y available at Pilot Z. _Please update._
+The output data will be pushed to a mobile device or a HUD used in the Pilot provided by SAG.
