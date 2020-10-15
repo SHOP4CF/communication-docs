@@ -22,8 +22,8 @@ Changes can be made either via GitHub web interface or via Git clients.
 Format files with Markdown (see [GitHub docs](https://guides.github.com/features/mastering-markdown/)).
 
 To push your changes:
-- open a pull request, or
-- contact Michal Zimniewicz (PSNC) via email to get permissions to push directly.
+- fork this repo, edit files, and open a pull request back to this repo (these steps happen automatically when editing via the web interface), or
+- send your GitHub username to Michal Zimniewicz (PSNC) via email; once you get permissions, you can create your branch in this repo and then open a pull request to branch master.
 
 If you modify file names or add new `*.md` files, 
 then please update [index.md](docs/index.md) accordingly.
