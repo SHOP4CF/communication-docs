@@ -4,43 +4,23 @@ Short name: IL-DT
 
 By PSNC
 
-_Text in italics are comments. Please remove them._
-
 ### Purpose
 
-_Describe the purpose of this component in 1-2 sentences. Please focus especially on what the component takes as its input, what added value it produces, and what is its output._
-
-This component takes ..., calculates ..., and returns ... 
+This component takes, as an input, the information about factory topography and  movements of operators (humans, AGVs, robots).
+Based on that, it creates an intralogistic model of the factory together with its visualisation, that lead to new recommendations for intralogistics.
 
 ### Data interfaces
 
-_Describe what kind of input and output data is in use.
-Be detailed about the interpretation of your data. 
-Instead of writing 'input data from 20 sensors', please specify. 
-Add reference to some examples or attachments, if reasonable._
-
-_The provided information is to be the basis to identify opportunities for uniform data models across components._
-
-_The preliminary information is taken from the cross-WP questionnaires from spring 2020. Feel free to modify._
-
 Input and output data (but not user interfaces):
 
-
-1. INPUT: Topographic data, operators data (humans, robots, AGVs, AGLV), operations data
-    - Format: High-level language ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+1. INPUT: Topographic data, operators data (humans, robots, AGVs), operations data
+    - Some information in natural language, and some data in machine format (to be specified)
+    - No real-time constraints
 
 1. OUTPUT: Recommendations for charges in setting positions, timing, routes, AGLT compositions
-    - Format:  ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+    - Format: report in natural language
+    - No real-time constraints
 
 
-The input data will be taken from Component X of Partner Y 
-and also from sensors available at Pilot Z. _Please update._
-
-The output data will be pushed to Component X... 
-or to system Y available at Pilot Z. _Please update._
+Under discussion how the input data will be collected.
+Possibly, it could be read from FIWARE Context Broker.
