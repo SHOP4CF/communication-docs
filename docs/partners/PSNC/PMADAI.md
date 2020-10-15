@@ -4,49 +4,27 @@ Short name: PMADAI
 
 By PSNC
 
-_Text in italics are comments. Please remove them._
-
 ### Purpose
 
-_Describe the purpose of this component in 1-2 sentences. Please focus especially on what the component takes as its input, what added value it produces, and what is its output._
+This component helps in predicting or preventing potential failures and incidents and also in supporting human workers in planning services and repairs.
+It is done by taking certain measurements and information on events from the shop floor as the input, and by applying a machine-learning model on such data to make predictions.
 
-This component takes ..., calculates ..., and returns ... 
+The concrete use case is prediction of repair and maintenance interventions for parts of the paintshop.
 
 ### Data interfaces
 
-_Describe what kind of input and output data is in use.
-Be detailed about the interpretation of your data. 
-Instead of writing 'input data from 20 sensors', please specify. 
-Add reference to some examples or attachments, if reasonable._
-
-_The provided information is to be the basis to identify opportunities for uniform data models across components._
-
-_The preliminary information is taken from the cross-WP questionnaires from spring 2020. Feel free to modify._
-
 Input and output data (but not user interfaces):
 
+1. INPUT: Events about SKIDs entering and leaving the poll of paint
+    - Format to be decided. Required attributes: timestamp, SKID ID, pendle ID
+    - Such events ocurr a few times per hour. No real-time constraints.
 
-1. INPUT: Preprocessed sensor data (available form DURR EcoEmos MES and other systems) and Additional information (from DB)
-    - Format: REST API / JSON ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+1. INPUT: Current measurements
+    - Format to be decided. Required attributes: timestamp, current measurements from a few streamlines
+    - Sampling every 1 second. No real-time constraints.
 
-1. OUTPUT: Predicion of possible failures planning of repairs
-    - Format: REST API ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+1. OUTPUT: (not yet decided, to be considered) Notifications about predicted problems
+    - Details to be decided.
+    - No real-time constraints.
 
-1. OUTPUT: Report with maintenance suggestions
-    - Format: REST API ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
-
-
-The input data will be taken from Component X of Partner Y 
-and also from sensors available at Pilot Z. _Please update._
-
-The output data will be pushed to Component X... 
-or to system Y available at Pilot Z. _Please update._
+These input and output data could be possibly taken from FIWARE Context Broker.
