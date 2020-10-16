@@ -10,7 +10,8 @@ _Text in italics are comments. Please remove them._
 
 _Describe the purpose of this component in 1-2 sentences. Please focus especially on what the component takes as its input, what added value it produces, and what is its output._
 
-This component takes ..., calculates ..., and returns ... 
+This component enables the training and supporting human workers in collaborative tasks   
+
 
 ### Data interfaces
 
@@ -26,7 +27,7 @@ _The preliminary information is taken from the cross-WP questionnaires from spri
 Input and output data (but not user interfaces):
 
 
-1. INPUT: Position movement and actions of worker
+1. INPUT: sensors (USB) and HMD (HDMI/USB) and controller joysticks for Oculus Rift
     - Format:  ...
     - Real-time constraints?
     - Expected data volume? E.g. amount per unit of time, if makes sense
