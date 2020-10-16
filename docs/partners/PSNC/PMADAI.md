@@ -6,7 +6,7 @@ By PSNC
 
 ### Purpose
 
-This component helps in predicting or preventing potential failures and incidents and also in supporting human workers in planning services and repairs.
+This component helps in predicting or preventing potential failures and incidents. It may also support human workers in planning services and repairs.
 It is done by taking certain measurements and information on events from the shop floor as the input, and by applying a machine-learning model on such data to make predictions.
 
 The concrete use case is prediction of repair and maintenance interventions for parts of the paintshop.
@@ -16,11 +16,11 @@ The concrete use case is prediction of repair and maintenance interventions for 
 Input and output data (but not user interfaces):
 
 1. INPUT: Events about SKIDs entering and leaving the poll of paint
-    - Format to be decided. Required attributes: timestamp, SKID ID, pendle ID
-    - Such events ocurr a few times per hour. No real-time constraints.
+    - Format to be decided. Required attributes: timestamp, SKID ID, pendle ID.
+    - Such events ocurr multiple times per hour. No real-time constraints.
 
 1. INPUT: Current measurements
-    - Format to be decided. Required attributes: timestamp, current measurements from a few streamlines
+    - Format to be decided. Required attributes: timestamp, current measurements from a few streamlines.
     - Sampling every 1 second. No real-time constraints.
 
 1. OUTPUT: (not yet decided, to be considered) Notifications about predicted problems
