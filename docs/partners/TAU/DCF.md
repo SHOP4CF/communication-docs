@@ -4,61 +4,49 @@ Short name: DCF
 
 By TAU
 
-_Text in italics are comments. Please remove them._
+
 
 ### Purpose
 
-_Describe the purpose of this component in 1-2 sentences. Please focus especially on what the component takes as its input, what added value it produces, and what is its output._
 
-This component takes ..., calculates ..., and returns ... 
+
+This component enables data collection from the factory shop floor and Enterprise Resources.
 
 ### Data interfaces
 
-_Describe what kind of input and output data is in use.
-Be detailed about the interpretation of your data. 
-Instead of writing 'input data from 20 sensors', please specify. 
-Add reference to some examples or attachments, if reasonable._
-
-_The provided information is to be the basis to identify opportunities for uniform data models across components._
-
-_The preliminary information is taken from the cross-WP questionnaires from spring 2020. Feel free to modify._
 
 Input and output data (but not user interfaces):
 
+INPUT
 
 1. INPUT: IoT Devices data (HTTP1.1 / MQTT on TCP/IP) > IoT Hub
-    - Format: Apache Active MQ messages ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+    - Format: Apache Active MQ messages 
+    - Real-time constraints TBD
+    - Expected data volume? TBD
+  
 
-1. INPUT: MS Excel, SQL, RESTful > Legacy Systems Hub (LHS), adapters
-    - Format: Apache Active MQ messages ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+2. INPUT: MS Excel, SQL, RESTful > Legacy Systems Hub (LHS), adapters
+    - Format: Apache Active MQ messages 
+    - Real-time constraints: TBD
+    - Expected data volume? TBD
+    Data adapters functionality have to be analyzed in respect to the legacy system of interest. 
+    
+OUTPUT
 
-1. OUTPUT: ???
-    - Format: XML data (internal) ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+1. OUTPUT: Stream data 
+    - Format: XML data (internal)
+    - Real-time constraints:N/A
+    - Expected data volume? TBD
+    The intended end use of data (transfer, storage, etc) has to be further defined.
 
-1. OUTPUT: DCF API, DCF admin API
-    - Format:  ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
-
-1. OUTPUT: MQTT protocol
-    - Format: MQTT data ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+2. OUTPUT: Events 
+    - Format:  TBD
+    - Real-time constraints TBD
+    - Expected data volume? TBD
+   The event types, dispatching and processing have to be defined based on system requirements. 
 
 
-The input data will be taken from Component X of Partner Y 
-and also from sensors available at Pilot Z. _Please update._
 
-The output data will be pushed to Component X... 
-or to system Y available at Pilot Z. _Please update._
+The input data will be taken from IoT devices and legacy systems in the shopfoor. 
+
+The output data and its intended end use have to be further defined. 
