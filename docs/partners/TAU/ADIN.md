@@ -4,49 +4,39 @@ Short name: ADIN
 
 By TAU
 
-_Text in italics are comments. Please remove them._
 
 ### Purpose
 
-_Describe the purpose of this component in 1-2 sentences. Please focus especially on what the component takes as its input, what added value it produces, and what is its output._
 
-This component takes ..., calculates ..., and returns ... 
+This component enables the adaptation of interfaces depending on the information collected from production line devices and the user’s profile, skills, and roles within the system.
+
 
 ### Data interfaces
 
-_Describe what kind of input and output data is in use.
-Be detailed about the interpretation of your data. 
-Instead of writing 'input data from 20 sensors', please specify. 
-Add reference to some examples or attachments, if reasonable._
-
-_The provided information is to be the basis to identify opportunities for uniform data models across components._
-
-_The preliminary information is taken from the cross-WP questionnaires from spring 2020. Feel free to modify._
 
 Input and output data (but not user interfaces):
 
+INPUT
 
 1. INPUT: Decision Support level Input data, contect level input data
-    - Format: HMI ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+    - Format: TBD
+    - Real-time constraints: TBD
+    - Expected data volume? TBD
+    
+OUTPUT    
 
 1. OUTPUT: Output data to mobile devices
+    - Format: TBD
+    - Real-time constraints: TBD
+    - Expected data volume? TBD
+
+2. OUTPUT: Output data to HMI dashboards
     - Format: HMI ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
-
-1. OUTPUT: Output data to production Management HMI
-    - Format: HMI ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+    - Real-time constraints: TBD
+    - Expected data volume? TBD
+    The different HMI dashboard and their functionalities have to be further defined based on pilot requirements. 
 
 
-The input data will be taken from Component X of Partner Y 
-and also from sensors available at Pilot Z. _Please update._
+The input data have to be further defined.
 
-The output data will be pushed to Component X... 
-or to system Y available at Pilot Z. _Please update._
+The output data have to be further defined in addition to possible interfaces to other components. 
