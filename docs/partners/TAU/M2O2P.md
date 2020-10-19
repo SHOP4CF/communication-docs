@@ -4,55 +4,50 @@ Short name: M2O2P
 
 By TAU
 
-_Text in italics are comments. Please remove them._
 
 ### Purpose
 
-_Describe the purpose of this component in 1-2 sentences. Please focus especially on what the component takes as its input, what added value it produces, and what is its output._
 
-This component takes ..., calculates ..., and returns ... 
+This component enables online robot programming using input methods based on human natural actions using a gesture tracking glove and a motion tracking controller.  
+
 
 ### Data interfaces
 
-_Describe what kind of input and output data is in use.
-Be detailed about the interpretation of your data. 
-Instead of writing 'input data from 20 sensors', please specify. 
-Add reference to some examples or attachments, if reasonable._
 
-_The provided information is to be the basis to identify opportunities for uniform data models across components._
 
-_The preliminary information is taken from the cross-WP questionnaires from spring 2020. Feel free to modify._
+
 
 Input and output data (but not user interfaces):
 
+INPUT
 
 1. INPUT: CaptoGlove, leap motion (USB)
-    - Format: JSON, socket ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+    - Format: JSON, socket 
+    - Real-time constraints: TBD
+    - Expected data volume? TBD
+  
 
-1. INPUT: HMI
-    - Format: Socket ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+2. INPUT: HMI
+    - Format: Socket 
+    - Real-time constraints
+    - Expected data volume: N/A 
+    - Used to set up connection between the application contoller, the IKC and the robots.
 
-1. INPUT: Inverse Kinematic Calculator (IKC)
-    - Format: Socket ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+3. INPUT: Inverse Kinematic Calculator (IKC)
+    - Format: Socket .
+    - Real-time constraints: TBD
+    - Expected data volume? TBD
+    
+    
+OUTPUT
 
 1. OUTPUT: Vector of joint values from IKC to robots (ABB IRB120, eCobra 600) + end eddectors action
-    - Format: CSV (on TCP/IP) ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+    - Format: CSV (on TCP/IP) 
+    - Real-time constraints TBD
+    - Expected data volume? TBD
+    
 
 
-The input data will be taken from Component X of Partner Y 
-and also from sensors available at Pilot Z. _Please update._
+The input data will be taken from captoglove and motion controller. 
 
-The output data will be pushed to Component X... 
-or to system Y available at Pilot Z. _Please update._
+The output data may be pushed to the application controller, which in turn send its output to the IKC. Interfaces to other components will be analyzed when necessary. 
