@@ -4,13 +4,9 @@ Short name: M3RCP
 
 By IMEC
 
-_Text in italics are comments. Please remove them._
-
 ### Purpose
 
-_Describe the purpose of this component in 1-2 sentences. Please focus especially on what the component takes as its input, what added value it produces, and what is its output._
-
-This component takes ..., calculates ..., and returns ... 
+This component is a platform that groups adapters to connect different kinds of input to different kinds of output. For example, it could take input from a positioning engine ( location of an AGV, in x,y coordinates), convert the data into the correct format and post it to a PubSub server (e.g. a FIWARE context broker).
 
 ### Data interfaces
 
@@ -28,19 +24,17 @@ Input and output data (but not user interfaces):
 
 1. INPUT: Input adapters
     - Format: LoRaWAN Adapter Vendor X, LoRaWAN Adapter Vendor Y, Sigfox Adapter ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+    - Real-time constraints: the component itself doesn't have any real time constraints as it pushed data to other components. So the end-component could have these restraints.
+    - Expected data volume: Could be 1 message/hour or 1 message every second. We don't expect more frequent updates than that. E.g. counterweight measurements could be 1 message (e.g. X amount of kilogram) every 30 seconds, while the positioning updates from an AGV (e.g. location x,y in cm) could be done every second
 
 1. OUTPUT: Data adapters
-    - Format: LwM2M adapters REST-based adapters MQTT adapters JSON ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+    - Format: LwM2M adapters REST-based adapters, MQTT adapters JSON ...
+    - Real-time constraints: the component itself doesn't have any real time constraints as it pushed data to other components. So the end-component could have these restraints.
+    - Expected data volume: every input could result in an output (e.g. push the data on the FIWARE context broker)
 
 
-The input data will be taken from Component X of Partner Y 
-and also from sensors available at Pilot Z. _Please update._
+The input data will be taken from Component WiPOS of IMEC
+and also from sensors available at Pilot Arcelik (counterweights measurements) and Pilot VW (skid health sensors).
 
-The output data will be pushed to Component X... 
-or to system Y available at Pilot Z. _Please update._
+The output data will be pushed to Component X (To be defined)
+or to system Y available at Pilot ... (To be defined)
