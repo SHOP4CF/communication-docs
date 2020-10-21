@@ -4,37 +4,21 @@ Short name: Wi-POS
 
 By IMEC
 
-_Text in italics are comments. Please remove them._
-
 ### Purpose
 
-_Describe the purpose of this component in 1-2 sentences. Please focus especially on what the component takes as its input, what added value it produces, and what is its output._
-
-This component takes ..., calculates ..., and returns ... 
+This component locates items/humans/robots/AGVs on the SHOPfloor in realtime and exposes the location data (e.g. x/y coordinate in cm). 
 
 ### Data interfaces
 
-_Describe what kind of input and output data is in use.
-Be detailed about the interpretation of your data. 
-Instead of writing 'input data from 20 sensors', please specify. 
-Add reference to some examples or attachments, if reasonable._
-
-_The provided information is to be the basis to identify opportunities for uniform data models across components._
-
-_The preliminary information is taken from the cross-WP questionnaires from spring 2020. Feel free to modify._
-
 Input and output data (but not user interfaces):
 
-
 1. OUTPUT: Location of equipment/AGVs/robots
-    - Format: REST interface ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+    - Format: REST interface, or data could be pushed to M3RCP component so that it can be exposed on the FIWARE context broker in the correct format.
+    - Real-time constraints: will depend on the end application (e.g. if the AGV depends on the accurate location information, or if it is just used for monitoring purposes).
+    - Expected data volume: estimated to be around 1 position update per item/human/AGV every second (or less)
 
 
-The input data will be taken from Component X of Partner Y 
-and also from sensors available at Pilot Z. _Please update._
+No real input is needed, however some parameters could be made configurable (e.g. increase the number of position updates for AGV 1).
 
-The output data will be pushed to Component X... 
-or to system Y available at Pilot Z. _Please update._
+The output data will be pushed to M3RCP (to be exposed on FIWARE context broker), other components to be defined...
+or to system Y available at Pilot Z. (To be defined).
