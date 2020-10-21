@@ -4,43 +4,27 @@ Short name: DYAMAND
 
 By IMEC
 
-_Text in italics are comments. Please remove them._
-
 ### Purpose
 
-_Describe the purpose of this component in 1-2 sentences. Please focus especially on what the component takes as its input, what added value it produces, and what is its output._
-
-This component takes ..., calculates ..., and returns ... 
+This component is a platform that groups adapters to connect different kinds of input to different kinds of output. For example, it could take input from a positioning engine ( location of an AGV, in x,y coordinates), convert the data into the correct format and post it to a PubSub server (e.g. a FIWARE context broker). While the M3RCP component focuses more on adapters for wireless technologies, this component is more mature regarding FIWARE integration and provides already lots of adapters for home automation appliances (e.g. Philips Hue).
 
 ### Data interfaces
 
-_Describe what kind of input and output data is in use.
-Be detailed about the interpretation of your data. 
-Instead of writing 'input data from 20 sensors', please specify. 
-Add reference to some examples or attachments, if reasonable._
-
-_The provided information is to be the basis to identify opportunities for uniform data models across components._
-
-_The preliminary information is taken from the cross-WP questionnaires from spring 2020. Feel free to modify._
-
 Input and output data (but not user interfaces):
-
 
 1. INPUT: Legacy and future input data
     - Format: None ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+    - Real-time constraints: depends highly on the requirements from the component that provides the input data.
+    - Expected data volume: depends highly on the requirements from the component that provides the input data. However, this component is able to handle quite large volumes of data.
 
 1. OUTPUT: Aggregated factory floor data
-    - Format: Dashboard ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+    - Format: Dashboard, push data to database
+    - Real-time constraints: depends highly on the INPUT data.
+    - Expected data volume: depends highly on the INPUT data.
 
 
-The input data will be taken from Component X of Partner Y 
-and also from sensors available at Pilot Z. _Please update._
+The input data will be taken from possibly all components that generate data and want to expose this on the FIWARE context broker (not clear for now)
+and also from sensors available at : No usage in Pilots currently planned.
 
-The output data will be pushed to Component X... 
-or to system Y available at Pilot Z. _Please update._
+The output data will be pushed to (To be defined)
+or to system Y available at Pilot Z: No usage in Pilots currently planned, but this could change in the future. (FSTP pilots?)
