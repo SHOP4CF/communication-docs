@@ -4,67 +4,57 @@ Short name: HA-MRN
 
 By JVERNE-FZI
 
-_Text in italics are comments. Please remove them._
+_FZI Component_
 
 ### Purpose
 
-_Describe the purpose of this component in 1-2 sentences. Please focus especially on what the component takes as its input, what added value it produces, and what is its output._
-
-This component takes ..., calculates ..., and returns ... 
+This component takes sensor information and robot localization, calculates the best trajectory avoiding obstacles on the way, and returns trajectory points for the most efficient path
 
 ### Data interfaces
 
-_Describe what kind of input and output data is in use.
-Be detailed about the interpretation of your data. 
-Instead of writing 'input data from 20 sensors', please specify. 
-Add reference to some examples or attachments, if reasonable._
-
-_The provided information is to be the basis to identify opportunities for uniform data models across components._
-
-_The preliminary information is taken from the cross-WP questionnaires from spring 2020. Feel free to modify._
 
 Input and output data (but not user interfaces):
 
 
 1. INPUT: Real-time connection to lidar
-    - Format: ROS lidar stream ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+    - Format: ROS Topics
+    - Real-time constraints: Real time for trajectory avoidance is requested 
+    - Expected data volume: at least 30 Hz
+    - Other details: the expected data volume depends on the LIDAR
 
-1. INPUT: Real-time stream
-    - Format: Camera stream ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+1. INPUT: Real-time Camera stream
+    - Format: ROS Topics
+    - Real-time constraints: Real time for trajectory avoidance is requested
+    - Expected data volume: at least 30 Hz
+    - Other details: the expected data volume depends on the camera to be used and the trained Neural Network for image post-processing
+
+1. INPUT: Robot positioning
+    - Format: ROS Topics
+    - Real-time constraints: During the goal achievement update on current position of the robot in a real time is requested to avoid collision and estimate if the goal (delivery) was achieved or not
+    - Expected data volumen: at least 30 Hz
 
 1. INPUT: Robot destination definition
-    - Format: GUI ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+    - Format: Coordinate point in a bitmap (Global map) with respect to the origin
+    - Real-time constraints: No
+  
+1. INPUT: Global map
+    - Format: Bitmap and YAML File (specifying meta information about the map, like origin, resolution and size)
+    - Real-time constraints: No, once the map is stored no updates on the workspace are done    
 
 1. OUTPUT: Global/Local plan, local navigation waypoints
-    - Format: None ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+    - Format: Coordinates in the bitmap (Global map) with respect to the origin
+    - Real-time constraints: yes. Obstacles might change the pre-established path 
+    - Expected data volume: at least 30 Hz
 
 1. OUTPUT: Mobile platform commands
-    - Format: ROS Twist ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+    - Format: ROS topics
+    - Real-time constraints: yes. The platform might be requested to stop, change direction or return the path, if an obstacle appears in the path
+    - Expected data volume: at least 10 Hz
 
-1. OUTPUT: Virtual obstacles for ROS MoveBase stack
-    - Format: None ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+1. OUTPUT: ROS MoveBase Stack
+    - Format: ROS Topic
+    - Real-time constraints: yes. The platform will be constantly informed about the trajectory to follow, and any changes in its path if there is an obstacle.
+    - Expected data volume: at least 10 Hz
 
-
-The input data will be taken from Component X of Partner Y 
-and also from sensors available at Pilot Z. _Please update._
-
-The output data will be pushed to Component X... 
-or to system Y available at Pilot Z. _Please update._
+The interaction with another components to obtain or use the 
+input and output data is still to be decided.
