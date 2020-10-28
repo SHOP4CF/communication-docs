@@ -36,17 +36,20 @@ Input and output data (but not user interfaces):
     - Expected data volume: Equivalent to the subscription time for GPU Voxels. Real time is necessary.
     - Other details:
 
-1. OUTPUT: Robot Trajectory Points
+2. OUTPUT: Robot Trajectory Points
     - Format:  ROS Topics
     - Real-time constraints: yes. Reactive path planning to shown obstacles on the workspace
     - Expected data volume: Update on the points in the trajectory needs to be as close to real time as possible
     - Other details:
 
-1. OUTPUT: Task Schedule (Reachable sub-tasks, completed sub-tasks)
+3. OUTPUT: Task Schedule (Reachable sub-tasks, completed sub-tasks)
     - Format: ROS Topics
     - Real-time constraints: yes. Constant supervision of tasks (reachable, unreachable, finished) is necessary for the task manager
-    - Other details:
+    - Other details: the ROS information will be given to Flexible Task Programming Tool from FZI, which controls the relation between different ROS topics to control robots and sensors
 
+The input and output data are going to used/controlled by the component Flexible Task Programming Tool developped by FZI.
 
-The input data and output data are at the current moment of this document not provided nor given to any of the available partners,
+The output might also be used by one of the componenets developed by Technalia, but it is not fully decided.
+
+The input data and output data are at the current moment of this document not provided nor given by any of the available partners,
 this information will be updated in the future.
