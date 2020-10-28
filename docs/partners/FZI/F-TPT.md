@@ -4,43 +4,30 @@ Short name: F-TPT
 
 By FZI
 
-_Text in italics are comments. Please remove them._
-
 ### Purpose
 
 _Describe the purpose of this component in 1-2 sentences. Please focus especially on what the component takes as its input, what added value it produces, and what is its output._
 
-This component takes ..., calculates ..., and returns ... 
+Graphical Front End Interface (GUI) to program robotic applications using Behavior Trees (comparable to FlexBe and Smach ROS packages). This component takes messages from external sensors and robots, models the different tasks and interactions between the ROS components, and returns status feedback 
 
 ### Data interfaces
-
-_Describe what kind of input and output data is in use.
-Be detailed about the interpretation of your data. 
-Instead of writing 'input data from 20 sensors', please specify. 
-Add reference to some examples or attachments, if reasonable._
-
-_The provided information is to be the basis to identify opportunities for uniform data models across components._
-
-_The preliminary information is taken from the cross-WP questionnaires from spring 2020. Feel free to modify._
 
 Input and output data (but not user interfaces):
 
 
 1. INPUT: From robots and sensors
-    - Format: ROS bridge, ROS topics and services ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+    - Format: ROS bridge, ROS topics and services 
+    - Real-time constraints: it depends on the tasks and processes to be used, it could be real time for some application (for instance, Task Manager component)
+    - Expected data volume: it depends on the task and process
+    - Other details: graphical visualization from robots and sensors' ROS topics and services available
 
 1. OUTPUT: Process status feedback
-    - Format: ROS topics, services and actions ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+    - Format: ROS topics, services and actions 
+    - Real-time constraints: it depends on the tasks and processes used, it could be real time for some application (for instance, Task Manager component)
+    - Expected data volume: it depends on the task and process
+    - Other details: graphical visualization from robots and sensors' ROS services, topics and actions available
 
 
-The input data will be taken from Component X of Partner Y 
-and also from sensors available at Pilot Z. _Please update._
+The input and output data will be taken from/ pushed to all the components developed by FZI 
 
-The output data will be pushed to Component X... 
-or to system Y available at Pilot Z. _Please update._
+It is to be decided with other partners about the usability for another use cases and components.
