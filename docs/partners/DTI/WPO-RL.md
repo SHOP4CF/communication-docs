@@ -4,49 +4,67 @@ Short name: WPO-RL
 
 By DTI
 
-_Text in italics are comments. Please remove them._
-
 ### Purpose
 
-_Describe the purpose of this component in 1-2 sentences. Please focus especially on what the component takes as its input, what added value it produces, and what is its output._
-
-This component takes ..., calculates ..., and returns ... 
+This component implements a reinforcement learning pipeline for a single workcell process optimization. 
+In its current state, it takes and image as input and output a shaking pattern for a vibration feeder. Thus, it tried to decrease the amount of time parsing before a pickable object is ready.
 
 ### Data interfaces
 
-_Describe what kind of input and output data is in use.
-Be detailed about the interpretation of your data. 
-Instead of writing 'input data from 20 sensors', please specify. 
-Add reference to some examples or attachments, if reasonable._
+1. INPUT: action configuration
+    - File type: `.json`
+    - Format:
+      ```
+      {
+        "actions": [
+            {
+              "name": "FlipAction",
+              "shake_service": "feeder/flip",
+              "repetitions": 4,
+              "speed": 10
+            },
+            {
+              "name": "ForwardAction",
+              "shake_service": "feeder/forward",
+              "repetitions": 4,
+              "speed": 10
+            },
+            {
+              "name": "BackwardAction",
+              "shake_service": "feeder/backward",
+              "repetitions": 4,
+              "speed": 10
+            }
+        ]
+      }
+      ```
+1. INPUT: General configuration
+    - This includes which model to use. The following are currently implemented: `a2c`, `d3qn`, `dqn`, `hardcoded`, `random`.
+    - Learning parameters
+    - Run training/execution in simulation or on real hardware
+    
+1. INPUT: image
+    - Format: ROS2 message
+    - Expected data volume: 2 images per action taken
+    - Expected data source: smart-camera
 
-_The provided information is to be the basis to identify opportunities for uniform data models across components._
+1. INPUT: number of pickable objects
+    - Format: ROS2 message
+    - Expected data volume: 2 images per action taken
+    - Expected data source: smart-camera
 
-_The preliminary information is taken from the cross-WP questionnaires from spring 2020. Feel free to modify._
+1. OUTPUT: action (shaking pattern to vibration feeder)
+    - Format: ROS2 message:
+        - type: `{forward, backward, flip, flip_forward, flip_backward}`
+        - speed: `[1, 10]`
+        - repetitions: `[1, 10]`
+    - Expected data volume: heavily depends on the time it takes to perform an action.
 
-Input and output data (but not user interfaces):
-
-
-1. INPUT: Objects, equipment
-    - Format: 3D models ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
-
-1. INPUT: Sesor data, robot state, images
-    - Format: ROS2 messages ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
-
-1. OUTPUT: Current System state, correction parameters, actions, decisions
-    - Format: ROS2 messeges, socket connections, message queues ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+1. OUTPUT: pick-position to robot
+    - Format: ROS2 message, (position, orientation)
+    - Expected data volume: [1, 100] seconds depending on the stage of the training.
+    - This is only intended to be used during training to speed up the process.
 
 
-The input data will be taken from Component X of Partner Y 
-and also from sensors available at Pilot Z. _Please update._
-
-The output data will be pushed to Component X... 
-or to system Y available at Pilot Z. _Please update._
+The `image` and `number of pickable objects` is current optained from a smart-camera. 
+This setup have the advantage that the camera also can be used directly by the robot/workcell-controller.
