@@ -4,73 +4,52 @@ Short name: DTS
 
 By FZI
 
-_Text in italics are comments. Please remove them._
-
 ### Purpose
 
-_Describe the purpose of this component in 1-2 sentences. Please focus especially on what the component takes as its input, what added value it produces, and what is its output._
-
-This component takes ..., calculates ..., and returns ... 
+This component takes the robot tasks; it classifies these tasks as achievable or not, to be done or completed; and it returns sub-tasks for the robot to work in a collaborative environemnt.
 
 ### Data interfaces
 
-_Describe what kind of input and output data is in use.
-Be detailed about the interpretation of your data. 
-Instead of writing 'input data from 20 sensors', please specify. 
-Add reference to some examples or attachments, if reasonable._
-
-_The provided information is to be the basis to identify opportunities for uniform data models across components._
-
-_The preliminary information is taken from the cross-WP questionnaires from spring 2020. Feel free to modify._
-
 Input and output data (but not user interfaces):
 
-
 1. INPUT: Real-time joint robot angles
-    - Format:  ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+    - Format:  ROS Topics
+    - Real-time constraints: yes. Precise knowledge from the joint states is needed to determine robot trajectories and position at all the times
+    - Expected data volume: 30 Hz
+    - Other details: Expected input from the (specific) robot driver. Joint controller and cartesian controller subcribe to this topic
 
-1. INPUT: Real-time sensors data (depth cameras, RGB images, laser scanner)
-    - Format: ROS messages ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+2. INPUT: Real-time sensors data (depth cameras, RGB images)
+    - Format: ROS Topics
+    - Real-time constraints: yes. Precise knowledge from the environment for decision making in the robot trajectory planning
+    - Expected data volume: Sensor information requires to check the environments at least 10 times per one second
+    - Other details: TF information from objects in the workspace, as well as depth information and RGB information from cameras is also used
 
-1. INPUT: Robot description
-    - Format: URDF file ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+3. INPUT: GPU-Voxels
+    - Format: ROS Topics
+    - Real-time constraints: yes. Precise knowledge from the environment for decision making in the robot trajectory planning
+    - Expected data volume: GPU-Voxels subscribes to Real-time sensors data, thus at least 10 checks per one second
+    - Other details: GPU-Voxels outputs volumen occupancy in the workspace available for the robot to follow the planned trajectory
 
-1. INPUT: Robot working environment description and relative positions
-    - Format:  ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+1. OUTPUT: Volumen Ocuppancy as GPU Voxels
+    - Format:  ROS Topics
+    - Real-time constraints: yes. Precise knowledge from the environment for decision making is required for accurate trajectory and goal planning
+    - Expected data volume: Equivalent to the subscription time for GPU Voxels. Real time is necessary.
+    - Other details:
 
-1. OUTPUT: Human pose
-    - Format:  ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+2. OUTPUT: Robot Trajectory Points
+    - Format:  ROS Topics
+    - Real-time constraints: yes. Reactive path planning to shown obstacles on the workspace
+    - Expected data volume: Update on the points in the trajectory needs to be as close to real time as possible
+    - Other details:
 
-1. OUTPUT: Robot state
-    - Format:  ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+3. OUTPUT: Task Schedule (Reachable sub-tasks, completed sub-tasks)
+    - Format: ROS Topics
+    - Real-time constraints: yes. Constant supervision of tasks (reachable, unreachable, finished) is necessary for the task manager
+    - Other details: the ROS information will be given to Flexible Task Programming Tool from FZI, which controls the relation between different ROS topics to control robots and sensors
 
-1. OUTPUT: Taska Schedule (Reachable sub-tasks, completed sub-tasks)
-    - Format: ROS action ...
-    - Real-time constraints?
-    - Expected data volume? E.g. amount per unit of time, if makes sense
-    - ... _other details_
+The input and output data are going to used/controlled by the component Flexible Task Programming Tool developped by FZI.
 
+The output might also be used by one of the componenets developed by Technalia, but it is not fully decided.
 
-The input data will be taken from Component X of Partner Y 
-and also from sensors available at Pilot Z. _Please update._
-
-The output data will be pushed to Component X... 
-or to system Y available at Pilot Z. _Please update._
+The input data and output data are at the current moment of this document not provided nor given by any of the available partners,
+this information will be updated in the future.
