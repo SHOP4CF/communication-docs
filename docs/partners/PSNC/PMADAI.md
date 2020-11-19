@@ -20,7 +20,7 @@ Input and output data (but not user interfaces):
     - Such events ocurr multiple times per hour. No real-time constraints.
 
 1. INPUT: Current measurements
-    - Format to be decided. Required attributes: timestamp, current measurements from a few streamlines.
+    - Format to be decided. Required attributes: timestamp, current measurements from a few busbars.
     - Sampling every 1 second. No real-time constraints.
 
 1. OUTPUT: (not yet decided, to be considered) Notifications about predicted problems
