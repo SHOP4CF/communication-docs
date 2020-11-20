@@ -12,7 +12,6 @@ The current stage is to specify existing interfaces of SHOP4CF components.
 SHOP4CF components by project partner:
 
 - DTI
-    - [OSA](partners/DTI/OSA.md)
     - [ROS-Mon](partners/DTI/ROS-Mon.md)
     - [WPO-RL](partners/DTI/WPO-RL.md)
 - FZI
