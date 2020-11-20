@@ -16,11 +16,19 @@ The concrete use case is prediction of repair and maintenance interventions for 
 Input and output data (but not user interfaces):
 
 1. INPUT: Events about SKIDs entering and leaving the poll of paint
-    - Format to be decided. Required attributes: timestamp, SKID ID, pendle ID.
+    - Format to be decided. Required attributes: 
+        - timestamp marking entrance of SKID to the poll,
+        - SKID ID,
+        - pendle ID (PEN number),
+        - car body ID (car body PIN),
+        - car body type,
+        - voltage program ID (program number).
     - Such events ocurr multiple times per hour. No real-time constraints.
 
 1. INPUT: Current measurements
-    - Format to be decided. Required attributes: timestamp, current measurements from a few busbars.
+    - Format to be decided. Required attributes: 
+        - timestamp, 
+        - current measurements from a few busbars.
     - Sampling every 1 second. No real-time constraints.
 
 1. OUTPUT: (not yet decided, to be considered) Notifications about predicted problems
