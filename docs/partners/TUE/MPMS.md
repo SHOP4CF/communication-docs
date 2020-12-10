@@ -194,6 +194,6 @@ Input and output data (but not user interfaces):
 > data will be pushed to Component X...    or to system Y available at
 > Pilot Z. _Please update_
 
- See individual INPUT/OUTPUT data for interaction from/to other components/systems.
+ See individual INPUT/OUTPUT info for interaction from/to other components/systems.
 
 
