@@ -1,13 +1,14 @@
-## FIWARE data model 
+## FIWARE data representation 
 
-[The SHOP4CF project](https://shop4cf.eu/) is about to define a data model on top of 
-[FIWARE NGSI API v2](https://fiware-orion.readthedocs.io/en/stable/user/walkthrough_apiv2/index.html).  
+[The SHOP4CF project](https://shop4cf.eu/) defines data models on top of 
+[FIWARE NGSI API](https://fiware-datamodels.readthedocs.io/en/latest/howto/index.html).  
 
-...
-
-The current stage is to specify existing interfaces of SHOP4CF components.
+Find more details [here](data-models/index.md).
 
 ## Interfaces of components
+
+This is specification of existing interfaces of SHOP4CF components
+prior to adopting FIWARE.
 
 SHOP4CF components by project partner:
 
