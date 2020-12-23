@@ -1,6 +1,6 @@
 ## Alert
 
-(in progress)
+_(in progress)_
 
 This model is based on [FIWARE Alert](https://github.com/smart-data-models/dataModel.Alert/blob/master/Alert/doc/spec.md).
 

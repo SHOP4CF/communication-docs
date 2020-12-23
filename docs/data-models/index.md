@@ -15,23 +15,21 @@ to understand this technical representation better.
 
 ### Conventions
 
-Beyond the strict rules defined by FIWARE NGSI, 
+Beyond the [FIWARE Smart Data Models guidelines](https://github.com/smart-data-models/data-models/blob/master/guidelines.md), 
 SHOP4CF defines the following convention.
 
 An entity identifier should be a [URN](https://en.wikipedia.org/wiki/Uniform_Resource_Name), 
 built as `urn:ngsi-ld:<entity-type>:<factory-id>:<entity-id>`, 
 for instance: `urn:ngsi-ld:Device:company-xyz:sensor-abc-12345`.
-This rule applies to `id` and `ref`-like attributes (i.e. pointing at other entities).
 
 ### Examples
 
-The FIWARE representation of the SHOP4CF concept data models
-is presented as the examples below.
+The examples given below provide an overview 
+of the FIWARE representation for the SHOP4CF concept data models.
 
-These examples are used for writing to the Context Broker. 
-When reading these entities from the Context Broker, 
-additional read-only attributes and metadata values may be present 
-(refer to FIWARE documentation).
+The examples are in the NGSI v2 normalised format. 
+
+Examples of the data models:
 
 - Resources:
     - [Device](device.md)
