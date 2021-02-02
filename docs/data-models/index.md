@@ -8,8 +8,8 @@ _This is work in progress!_
 The concept data models 
 (i.e. the definitions of data entities, relationships, and attributes)
 as well as further explanations of the data architecture
-are described in the SHOP4CF architecture 
-(link to be provided once it is public). 
+are described in the [SHOP4CF architecture](https://workbench.ub.tum.de/#/files/238ac0ad-d8b6-4271-8c02-d5a953bd00cb) 
+(a public link to be provided once available). 
 Reviewing the data architecture may be necessary 
 to understand this technical representation better.
 
