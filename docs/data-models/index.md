@@ -27,7 +27,8 @@ for instance: `urn:ngsi-ld:Device:company-xyz:sensor-abc-12345`.
 The examples given below provide an overview 
 of the FIWARE representation for the SHOP4CF concept data models.
 
-The examples are in the NGSI v2 normalised format. 
+**Warning! These examples are in the NGSI v2 normalised format. 
+Please note the SHOP4CF project chose to adopt the NGSI-LD format, so the examples need to be adjusted.**
 
 Examples of the data models:
 
