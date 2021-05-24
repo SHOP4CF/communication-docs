@@ -1,9 +1,6 @@
 ## FIWARE data representation 
 
-[The SHOP4CF project](https://shop4cf.eu/) defines data models on top of 
-[FIWARE NGSI API](https://fiware-datamodels.readthedocs.io/en/latest/howto/index.html).  
-
-Find more details [here](data-models/index.md).
+Details on SHOP4CF data models can be found [here](https://shop4cf.github.io/data-models/).
 
 ## Interfaces of components
 
